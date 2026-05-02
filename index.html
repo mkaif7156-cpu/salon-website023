@@ -47,7 +47,7 @@ header{
   height:100vh;
   background:
     linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
-    url('bg.jpg');
+    url('bg.jpg.png');
   background-size:cover;
   background-position:center;
   display:flex;
@@ -177,7 +177,38 @@ section.show{
   color:#ccc;
 }
 
-/* INSTAGRAM BUTTON */
+/* CONTACT BOX */
+.contact-box{
+  max-width:500px;
+  margin:40px auto;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 30px rgba(230,194,122,0.15);
+  text-align:left;
+  transition:0.3s;
+}
+
+.contact-box:hover{
+  box-shadow:0 0 40px rgba(230,194,122,0.4);
+  transform:translateY(-5px);
+}
+
+.contact-item{
+  margin:15px 0;
+  font-size:18px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.contact-item span{
+  color:#e6c27a;
+  font-size:20px;
+}
+
+/* INSTAGRAM */
 .insta-btn{
   display:inline-block;
   margin-top:20px;
@@ -238,10 +269,10 @@ footer{
 <section id="gallery">
   <h2 class="section-title">Gallery</h2>
   <div class="gallery">
-    <img src="bg.jpg">
-    <img src="bg.jpg">
-    <img src="bg.jpg">
-    <img src="bg.jpg">
+    <img src="bg.jpg.png">
+    <img src="bg.jpg.png">
+    <img src="bg.jpg.png">
+    <img src="bg.jpg.png">
   </div>
 </section>
 
@@ -254,12 +285,24 @@ footer{
 
 <section id="contact">
   <h2 class="section-title">Contact</h2>
-  <p>📞 +91 9528752039</p>
-  <p>📍 Your Location</p>
 
-  <a href="https://instagram.com/YOUR_USERNAME" target="_blank" class="insta-btn">
-    Follow us on Instagram
-  </a>
+  <div class="contact-box">
+
+    <div class="contact-item">
+      <span>📞</span>
+      +91 9528752039
+    </div>
+
+    <div class="contact-item">
+      <span>📍</span>
+      T-511, Chamelian Marg, New Basti, Sadar Bazaar, New Delhi, Delhi, 110006
+    </div>
+
+    <a href="https://instagram.com/YOUR_USERNAME" target="_blank" class="insta-btn">
+      Follow us on Instagram
+    </a>
+
+  </div>
 </section>
 
 <footer>
