@@ -47,7 +47,7 @@ header{
   height:100vh;
   background:
     linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
-    url('bg.jpg');
+    url('bg.jpg.png');
   background-size:cover;
   background-position:center;
   display:flex;
@@ -77,16 +77,40 @@ header{
   color:#ddd;
 }
 
-/* BUTTONS */
+/* BUTTON GLOW */
 .btn{
   display:block;
   margin-top:12px;
-  padding:12px;
+  padding:14px;
   border-radius:30px;
   background:linear-gradient(45deg,#c59d5f,#e6c27a);
   color:#000;
   text-decoration:none;
   font-weight:bold;
+  position:relative;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.btn::before{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:100%;
+  left:0;
+  top:0;
+  background:rgba(255,255,255,0.3);
+  transition:0.4s;
+}
+
+.btn:hover::before{
+  width:100%;
+}
+
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(230,194,122,0.9),
+             0 0 50px rgba(230,194,122,0.6);
 }
 
 /* SECTION */
@@ -121,6 +145,7 @@ section.show{
   padding:20px;
   border-radius:12px;
   text-align:center;
+  transition:0.3s;
 }
 
 .card:hover{
@@ -152,32 +177,23 @@ section.show{
   color:#ccc;
 }
 
-/* CONTACT */
-.contact{
-  text-align:center;
-}
-
-.map{
-  width:100%;
-  height:300px;
-  border:none;
-  border-radius:10px;
-  margin-top:20px;
-}
-
-/* SOCIAL */
-.social{
-  margin-top:20px;
-}
-
-.social a{
+/* INSTAGRAM BUTTON */
+.insta-btn{
   display:inline-block;
-  margin:10px;
-  padding:10px 20px;
-  background:#e1306c;
+  margin-top:20px;
+  padding:12px 25px;
   border-radius:30px;
+  background:linear-gradient(45deg,#fd1d1d,#e1306c,#c13584,#833ab4);
   color:#fff;
   text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.insta-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #e1306c,
+             0 0 40px #833ab4;
 }
 
 /* FOOTER */
@@ -238,23 +254,12 @@ footer{
 
 <section id="contact">
   <h2 class="section-title">Contact</h2>
+  <p>📞 +91 9528752039</p>
+  <p>📍 Your Location</p>
 
-  <div class="contact">
-    <p>📞 +91 9528752039</p>
-    <p>📍 Your Location</p>
-
-    <!-- INSTAGRAM -->
-    <div class="social">
-      <a href="https://instagram.com/studio7_salon" target="_blank">Instagram</a>
-    </div>
-
-    <!-- GOOGLE MAP -->
-    <iframe 
-      class="map"
-      src="https://www.google.com/maps?q=Your Location&output=embed">
-    </iframe>
-
-  </div>
+  <a href="https://instagram.com/YOUR_USERNAME" target="_blank" class="insta-btn">
+    Follow us on Instagram
+  </a>
 </section>
 
 <footer>
